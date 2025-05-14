@@ -425,6 +425,76 @@ body{
   align-items: center;
   gap: 0.7rem;
 }
+.verticalassign-ad{
+  display:grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+  justify-content:center;
+  gap: 2rem;
+  max-width: 45rem;
+}
+
+.gr5{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  max-width: 10rem;
+  margin-left: 5rem;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.gr5-nad{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  max-width: 25rem;
+  margin-left: 3rem;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+
+}
+.comment-meta-ad-s{
+  text-align: center;
+}
+.gr5-tit{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  max-width: 10rem;
+  margin-left: 3.1rem;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.gr5-tit-nad{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-width: 25rem;
+  margin-left: 3.1rem;
+  gap: 15rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.gr5-tit2{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-width: 10rem;
+  margin-left: 3.1rem;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  white-space: nowrap;
+}
 
 .comment-content{
   max-width: 18.2rem;
@@ -442,6 +512,34 @@ body{
   flex-direction: row;
   gap: 4rem;
   text-transform: capitalize;
+
+}
+.norap{
+  white-space: nowrap;
+text-align: center;
+}
+
+.comment-meta2{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 8rem;
+  text-transform: capitalize;
+}
+.over-content{
+  max-width: 10ch;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+.point{
+  cursor: pointer;
+}
+
+.over-content2{
+  max-width: 7.6ch;
+  overflow: hidden;
+  text-align: center;
+
 }
 .comentusname{
   max-width: 15ch;
@@ -461,6 +559,31 @@ body{
   padding-bottom:1rem;
   max-height: 12rem;
 }
+.asign-item{
+  display:grid;
+  grid-template-rows: 50% 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  /*text-align: center;*/
+  /*justify-content: left;*/
+  align-items: left;
+  border-bottom:solid 1.5px ;
+  border-color:rgb(0, 83, 165) ;
+  padding-bottom:1rem;
+  max-height: 12rem;
+
+}
+.asign-item-ad{
+  text-align: center;
+  /*justify-content: left;*/
+
+  border-bottom:solid 1.5px;
+  border-color:rgb(0, 83, 165) ;
+  padding-bottom:0.5rem;
+  max-height: 12rem;
+  min-width: 35rem;
+}
+
 .over{
   max-height: 15rem;
   overflow: auto;

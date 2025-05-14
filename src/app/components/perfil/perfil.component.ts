@@ -102,4 +102,7 @@ export class PerfilComponent implements OnInit{
       console.error('Error al eliminar el aviso:', error);
     }
   }
+  gotask(id:number):void{
+    this.router.navigate(['tasks/' + id]);
+  }
 }
