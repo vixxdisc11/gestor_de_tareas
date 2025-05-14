@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.component.css">
+  <title>Gestor de Tareas</title>
+
+</head>
+<body>
+<div class="un">
+  <div>
+    <h1 class="tit">GESTOR DE TAREAS</h1>
+  </div>
+  <form class="fini" (ngSubmit)="login()" [formGroup]="loginform">
+<!--    (ngsubmit)="login()"-->
+    <legend>Iniciar Sesión</legend>
+    <div class="hor">
+      <label >Email</label>
+      <input type="email" formControlName="email"  placeholder="Introduce Tu Email" required>
+    </div>
+
+    <div class="hor2">
+      <label >Contraseña</label>
+      <input type="password" formControlName="password"  placeholder="Introducir Tu Contraseña" required>
+    </div>
+
+   <a class="enl" [routerLink]="'r'">Registrarse</a>
+    <button class="btn" type="submit" [disabled]="isLoading" >Iniciar Sesion</button>
+
+
+  </form>
+</div>
+</body>
+</html>

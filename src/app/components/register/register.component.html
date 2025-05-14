@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="register.component.css">
+  <title>Gestor de Tareas</title>
+</head>
+<body>
+
+<div class="un">
+  <h1 class="tit">GESTOR DE TAREAS</h1>
+  <form class="fini" (ngSubmit)="registrar()" [formGroup]="registerform">
+
+    <legend>Registrarse</legend>
+
+    <div class="hor">
+      <label >Nombre</label>
+      <input type="text"formControlName="name"  required>
+    </div>
+    <div class="hor">
+      <label >Email</label>
+      <input type="email" formControlName="email"  required>
+    </div>
+
+    <div class="hor">
+      <label >Contraseña</label>
+      <input type="password" formControlName="password"  required>
+    </div>
+
+    <a class="enl" (click)="routerregister()">Iniciar Sesion</a>
+    <button class="btn" type="Submit" [disabled]="isLoading">Registrarse</button>
+  </form>
+</div>
+</body>
+</html>

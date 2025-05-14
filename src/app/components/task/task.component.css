@@ -1,0 +1,448 @@
+body{
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.tit{
+  background-color: rgb(180, 180, 180);
+  border-radius: 0.5rem;
+  padding-left: 5rem;
+  /*padding-right: 30rem;*/
+  /*padding-top: 0.2rem;*/
+  /*padding-bottom: 0.2rem;*/
+  max-height: 5rem;
+  text-align:center;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  gap: 3.8rem;
+  align-items: center;
+
+
+}
+.perfil{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.perfil-icon{
+  max-width: 50px;
+  max-height: 50px;
+}
+.table-container{
+  border: solid;
+  border-radius: 0.5rem;
+  border-color: rgb(202, 202, 202);
+  padding-top:0.8rem;
+  padding-bottom:0.8rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+td{
+  border: solid 1px;
+  border-radius: 0.5rem;
+  border-color: rgb(202, 202, 202);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.hor{
+  display: flex;
+  flex-direction: row;
+  gap:1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.7rem;
+  margin-top: 0.3rem;
+}
+.bor{
+  border-bottom: solid 1.5px;
+  border-top: solid 1.5px;
+  border-color: rgb(202, 202, 202);
+  min-width: 4rem;
+
+}
+
+.tab{
+  display: grid;
+  grid-template-columns: 40% 60% ;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+  margin-left: 2rem;
+
+}
+.tab2{
+  display: grid;
+  grid-template-columns: 38% 62%;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+  margin-left: 2rem;
+  min-height: 7rem;
+
+}
+.col3{
+  display: grid;
+  grid-template-columns: 19rem 4rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  max-height: 7rem;
+  overflow: hidden;
+  margin-left: 0.3rem;
+}
+.col4{
+  display: grid;
+  grid-template-columns: 15% 85%;
+  justify-content: center;
+  align-items: center;
+  gap: 11.1rem;
+  margin-left: 8.9rem;
+
+  text-transform: capitalize;
+
+
+}
+.hor2{
+  display: grid;
+  grid-template-columns: 85% 15%;
+  gap: 4rem;
+  margin-top: 1.5rem;
+  margin-right: 6rem;
+}
+.c{
+  display: flex;
+  flex-direction: row;
+  justify-content:left;
+}
+.s1{
+  display: flex;
+  flex-direction: row;
+  gap: 11.2rem;
+  justify-content: left;
+  white-space: nowrap;
+}
+.s3{
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+  justify-content: left;
+  margin-left: 0.7rem;
+  max-width: 14rem;
+}
+.s2{
+  display: flex;
+  flex-direction: row;
+  gap: 7rem;
+  align-items: center;
+  justify-content: left;
+  margin-left: 3.1rem;
+}
+.s4{
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+  align-items: center;
+  justify-content: left;
+  margin-left: 0.7rem;
+  max-width: 8rem;
+}
+
+.fin{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: solid 1px;
+  border-color: black;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+}
+.fini h3{
+  text-align: center;
+}
+.formm{
+  margin-top: 0.3rem;
+}
+.enl{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  background-color: rgb(170, 170, 170);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  border-color: rgb(202, 202, 202);
+  border: solid 1.5px;
+}
+.boo{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.enl3{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  background-color: rgb(255, 10, 10);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  border-color: rgb(202, 202, 202);
+  border: solid 1.5px;
+  cursor: pointer;
+}
+
+.boo3{
+  position: fixed;
+  bottom: 100px;
+  right: 44px;
+}
+.enl2{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  background-color: rgb(170, 170, 170);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.1rem;
+  font-family: "Lato", sans-serif;
+  border-color: rgb(202, 202, 202);
+  border: solid 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.se{
+  margin-top: 0.2rem;
+}
+.se2{
+  margin-left: 1.2rem;
+}
+.se3{
+  margin-left: 1.3rem;
+}
+.ver1{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.unli{
+  max-width: 7ch;
+  margin-left: 0.2rem;
+
+}
+.fila {
+  display: grid;
+  grid-template-columns: 4rem 6rem 4rem 12rem;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+.col1{
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 7rem;
+  margin-left: 2.5rem;
+  overflow: hidden;
+}
+
+.col2{
+  display: grid;
+  grid-template-columns: 15% 85%;
+  gap: 8.5rem;
+  margin-left: 2rem;
+  overflow: hidden;
+}
+
+.upper{
+  text-transform: uppercase;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+}
+.avatar {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.enla{
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  margin-left: 1.1rem;
+}
+.dfil{
+  text-transform: uppercase;
+  text-decoration: line-through;
+  color: black;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+  font-family: "Lato", sans-serif;
+
+
+}
+.fil{
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+  font-family: "Lato", sans-serif;
+
+  font-family: "Lato", sans-serif;
+
+}
+.dis{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+.filt{
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+  font-family: "Lato", sans-serif;
+
+  font-family: "Lato", sans-serif;
+}
+.fild{
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+  font-family: "Lato", sans-serif;
+
+  font-family: "Lato", sans-serif;
+}
+.filda{
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.estado-circulo {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+  border: solid 1px;
+}
+.upper{
+
+  white-space: nowrap;
+
+}
+.nora{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 20ch;
+}
+.nora2{
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 9.3ch;
+}
+.fbt{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+
+  align-items: center;
+
+}
+.borra{
+  background-color: rgb(255, 255, 255);
+  max-height: 1.2rem;
+  color: red;
+  text-transform: uppercase;
+  font-weight: 900;
+  border:none;
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: flex;
+  flex-direction:row;
+  gap: 4rem;
+}
+
+.aviso {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.desub {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.avisored {
+  color: red;
+  margin-bottom: 1rem;
+}
+

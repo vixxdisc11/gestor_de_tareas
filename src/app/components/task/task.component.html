@@ -1,0 +1,161 @@
+@if (!isLoading) {
+  @if (avisos.length > 0){
+    <div class="overlay">
+      @for (aviso of avisos; track $index) {
+        @if (aviso.duracion < 1){
+<!--          <input type="hidden" class="desub" [ngModel]="delaviso(aviso.id)">-->
+        } @else {
+          <div class="aviso">
+            <div type="hidden" class="desub" (click)="decrease(aviso.id,aviso.user_id,aviso.duracion,aviso.contenido)">X</div>
+            <div>
+              <h2 class="avisored">¡AVISO!</h2>
+              <h2>{{ aviso.contenido }}</h2>
+            </div>
+          </div>
+        }
+
+      }
+    </div>
+  }
+
+
+  <div class="tit">
+    <h1 >GESTOR DE TAREAS</h1>
+    <div >
+      <a (click)="goperfil(loged2)" class="hor">
+      <h2>Bienvenido, {{this.nombre}}</h2>
+      <img class="perfil-icon" src="usuario.png" alt="tee"></a>
+    </div>
+  </div>
+  <nav class="hor">
+    <form class="hor" (ngSubmit)="filtrar()">
+      <div>
+      </div>
+      <div class="dis">
+        <div>
+          <input type="checkbox" [checked]="filters.status === 'Not Started'" name="Not Started"  (change)="setStatusFilter('Not Started')">
+          <label class="filt" >NOT STARTED</label>
+        </div>
+        <div>
+          <input type="checkbox" [checked]="filters.status === 'Doing'" name="Doing"  (change)="setStatusFilter('Doing')">
+          <label class="fild" >DOING</label>
+        </div>
+        <div>
+          <input type="checkbox" [checked]="filters.status === 'Done'" name="Done" (change)="setStatusFilter('Done')">
+          <label class="filda" >DONE</label>
+        </div>
+      </div>
+
+      <!--    <div><button class="fil" type="submit">Filtrar</button></div>-->
+
+    </form>
+  </nav>
+  <div class="hor2">
+    <div class="ver1">
+      <nav class="tab bor">
+        <div class="s1">
+          <h2 class="se2">Titulo</h2>
+          <h2>Creado Por</h2>
+        </div>
+        <div class="s2">
+          <h2 class="se3">Estado</h2>
+          <h2>Fecha De Creacion</h2>
+        </div>
+      </nav>
+
+      @if(tasks.length == 0){
+        <nav class="tab2 bor">
+          <div>No hay tareas en este momento</div>
+        </nav>
+      } @else {
+        @for(task of tasks; track $index){
+          <nav class="tab2 bor">
+            <div class="col3">
+              <h2 class="unli">
+                <a class="enla nora" [routerLink]="task.id" >
+                  {{task.title}}
+                </a>
+              </h2>
+              <h2>
+                <div class="avatar">{{task.created_by}}</div>
+              </h2>
+            </div>
+
+            <div class="col4">
+              <h2 class="upper">
+                @if (task.status == "Done") {
+                  <span class="estado-circulo" style="background-color:#6cff00;"></span>
+                }
+                @else if (task.status == "Doing") {
+                  <span class="estado-circulo" style="background-color:yellow;"></span>
+                }
+                @else if (task.status == "Not Started"){
+                  <span class="estado-circulo" style="background-color:red;"></span>
+                }
+
+                {{task.status}}
+
+              </h2>
+              <div class="fbt">
+                <h2 class="nora2">{{task.created_at}}</h2>
+                @for (log of loged;track $index){
+                  @if (log.is_admin){
+                    <form [formGroup]="delf" (ngSubmit)="deltask(task.id)">
+                      <button class="borra" type="submit">X</button>
+                    </form>
+                  }
+                }
+
+
+
+              </div>
+
+
+            </div>
+
+          </nav>
+        }
+      }
+
+    </div>
+    @for (log of loged;track $index){
+      @if (log.is_admin){
+        <div class="formm">
+          <div class="fini se">
+
+            <h3>Crear Nueva Tarea</h3>
+            <form [formGroup]="tareaForm" class="fin" (ngSubmit)="Posttask()">
+              <label for="title">Título:</label>
+              <input type="text" id="title" formControlName="title">
+              <label for="description">Descripción:</label>
+              <textarea id="description" formControlName="description"></textarea>
+              <input type="hidden" formControlName="status" value="not started">
+              <input type="hidden" formControlName="created_by"  >
+              <button class="enl2" type="submit" >Crear Tarea</button>
+            </form>
+
+          </div>
+        </div>
+      }
+    }
+
+  </div>
+  @for(log of loged;track $index){
+    @if(log.is_admin){
+      <a class="enl3 boo3" (click)="admin()">Admin panel</a>
+
+    }
+  }
+  <a class="enl boo" href="" (click)="deltok()">Cerrar Sesion</a>
+
+
+
+
+}
+
+
+
+
+
+
+

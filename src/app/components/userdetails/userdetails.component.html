@@ -1,0 +1,96 @@
+<section class="r5">
+  <section class="grid50" id="gridSection">
+    <div class="pr-tit">
+      <div class="">
+        <div>
+          <h1 class="pretit">Detalles del Usuario:</h1>
+          <h1 class="tasktitle">{{ loged.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grid50" id="miGrid">
+    <div id="leftColumn" class="datacontent">
+      <form [formGroup]="avisosform" (ngSubmit)="createaviso()" class="bordertop marg">
+        <h2 class="column4">Crear aviso </h2>
+        <div class="verticalassign">
+          <div class="verticalassign">
+            <label>Duración del aviso</label>
+<!--            (change)="valueduration(loged.id)"-->
+            <select formControlName="duracion" >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="textarea-container" style="position: relative; width: 25%;">
+            <textarea rows="1" name="comment" style="width: 100%;  padding-right: 43px; resize: none;"
+                      formControlName="contenido"></textarea>
+            <button type="submit"
+                    style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                   class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="redat">
+        <div>
+          <p class="column">Listado De Tareas Asignadas</p>
+          @for (userAssigned of asigned; track $index) {
+            <div class="over">
+              <div class="comment-item">
+                <div class="verticalassign">
+                  <div class="comment-meta">{{ userAssigned.title }}</div>
+                  <div class="desub" (click)="idasign2(userAssigned.id)">X</div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        <div>
+          <p class="column">Listado De Avisos Activos</p>
+          @for (aviso of avisos; track $index) {
+            <div class="over">
+              <div class="comment-item">
+                <div class="verticalassign">
+                  <div class="comment-meta">{{ aviso.id }}</div>
+                  <div class="comment-meta">{{ aviso.contenido }}</div>
+                  <div class="comment-meta">{{ aviso.user_id }}</div>
+                  <div class="comment-meta">{{ aviso.duracion }}</div>
+                  <div class="desub" (click)="delaviso(aviso.id)">X</div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        <div>
+          <p class="column">Listado De Comentarios</p>
+          @for (comment of comments; track $index) {
+            @if (comment.user_id == id) {
+              <div class="over">
+                <div class="comment-item">
+                  <div class="verticalassign">
+                    <div class="avatar" style="background-color: red; ">{{ comment.initial }}</div>
+                    <div class="comment-meta"><span
+                      class="comentusname">{{ comment.name }}</span><span> {{ comment.created_at }}</span></div>
+                  </div>
+                  <div class="horizontal2">
+                    <div class="comment-content"><span class="desbordar">{{ comment.contenido }}</span></div>
+                    <div class="desub" (click)="idasign3(comment.id)">x</div>
+                  </div>
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<a class="enlvolver boolver" (click)="admin()">Admin panel</a>
+<a class="enl boo" href="" (click)="deltok()">Cerrar Sesion</a>

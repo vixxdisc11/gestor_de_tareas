@@ -1,0 +1,81 @@
+<nav class="hor">
+  <h1 class="">Admin Panel</h1>
+  <a class="enl" href="" (click)="tasks()">Volver a Tareas</a>
+  <a class="enl" href="">Cerrar Sesion</a>
+</nav>
+<section>
+
+    @if(users.length == 0){
+      <nav class="tab2 bor">
+        <div>No hay tareas en este momento</div>
+      </nav>
+    } @else {
+      @for(user of users; track $index){
+        <nav class="tab2 bor">
+          <div class="col3">
+            <h2 class="unli">
+              <a class="enla nora" [routerLink]="user.id" >
+                {{user.name}}
+              </a>
+            </h2>
+          </div>
+
+          <div class="col4">
+            <h2 class="upper">
+              @if (user.is_admin) {
+<!--                <form class="hori" (ngSubmit)="changeadmin(user.id)">-->
+<!--                <button  type="submit"  class="estado-circulo" style="background-color:#6cff00;"></button>-->
+<!--                  <h2>ADMIN</h2>-->
+<!--                </form>-->
+                <form   (ngSubmit)="changeadmin(user.id)">
+                  <button type="submit" class="hori noshow">
+                    <button class="hori"   class="estado-circulo" style="background-color:#6cff00;" href=""></button>
+                    <h2>ADMIN</h2>
+                  </button>
+                </form>
+              }
+              @else {
+                <form   (ngSubmit)="changeadmin(user.id)">
+                  <button type="submit" class="hori noshow">
+                <button class="hori"   class="estado-circulo" style="background-color:#ff0000;" href=""></button>
+                  <h2>Usuario</h2>
+                  </button>
+                </form>
+              }
+
+
+
+
+            </h2>
+            <div class="fbt">
+
+
+                  <form  (ngSubmit)="deleteuser(user.id)">
+                    <button class="borra" type="submit">X</button>
+                  </form>
+
+
+
+
+
+            </div>
+          </div>
+        </nav>
+
+
+
+
+      }
+    }
+
+</section>
+
+
+
+
+
+
+
+
+
+

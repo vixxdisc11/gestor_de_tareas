@@ -1,0 +1,65 @@
+<section class="r5">
+  <section class="grid50" id="gridSection">
+    <div class="pr-tit">
+      <div class="">
+        <div>
+          <h1 class="pretit">Detalles del Usuario:</h1>
+          <h1 class="tasktitle">{{ loged.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grid50" id="miGrid">
+    <div id="leftColumn" class="datacontent">
+      <div class="bordertop marg">
+        <h2 class="column">Listado De Tareas Por Hacer:</h2>
+        <div>
+          @for (userAssigned of asigned; track $index) {
+            @if (userAssigned.status == 'Doing' || userAssigned.status == 'Not Started') {
+              <div class="over">
+                <div class="comment-item">
+                  <div class="verticalassign">
+                    <div class="comment-meta">{{ userAssigned.title }}</div>
+                    <div class="comment-meta">{{ userAssigned.status }}</div>
+                    @if (loged.is_admin) {
+                      <div class="desub" (click)="idasign2(userAssigned.id)">X</div>
+                    }
+                  </div>
+                </div>
+              </div>
+            }
+
+          }
+        </div>
+      </div>
+      <div class="redat">
+
+        <div>
+          <h2 class="column">Listado De Comentarios</h2>
+          @for (comment of comments; track $index) {
+            @if (comment.user_id == id) {
+              <div class="over">
+                <div class="comment-item">
+                  <div class="verticalassign">
+                    <div class="avatar" style="background-color: red; ">{{ comment.initial }}</div>
+                    <div class="comment-meta"><span
+                      class="comentusname">{{ comment.name }}</span><span> {{ comment.created_at }}</span></div>
+                  </div>
+                  <div class="horizontal2">
+                    <div class="comment-content"><span class="desbordar">{{ comment.contenido }}</span></div>
+                    <div class="desub" (click)="idasign3(comment.id)">x</div>
+                  </div>
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+    <a class="enlvolver boolver" (click)="admin()">Admin panel</a>
+
+<a class="enl boo" href="" (click)="deltok()">Cerrar Sesion</a>

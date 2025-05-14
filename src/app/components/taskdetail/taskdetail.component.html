@@ -1,0 +1,158 @@
+@if (!isLoading) {
+  @if (task && task.id == [id]) {
+    <section class="r5">
+      <section class="grid50" id="gridSection">
+        <div class="pr-tit">
+          <div class="">
+            <div>
+              <h1 class="pretit">Detalles de la Tarea:</h1>
+              <h1 class="tasktitle">{{ task.title }}</h1>
+            </div>
+          </div>
+          <div class="status">
+
+            @if (task.status == "Done") {
+              <span class="estado-circulo" style="background-color:#6cff00;"></span>
+            } @else if (task.status == "Doing") {
+              <span class="estado-circulo" style="background-color:yellow;"></span>
+            } @else if (task.status == "Not Started") {
+              <span class="estado-circulo" style="background-color:red;"></span>
+            }
+            @if (loged.is_admin) {
+              <div class="status2">
+                <select class="selc" name="status" [(ngModel)]="task.status" (change)="changeStatus(task)">
+                  <option value="Not Started">NOT STARTED</option>
+                  <option value="Doing">DOING</option>
+                  <option value="Done">DONE</option>
+                </select>
+              </div>
+            } @else {
+              @if (task.status == "Done") {
+
+                <h2 class="state" style="background-color:#6cff00;">{{ task.status }}</h2>
+              } @else if (task.status == "Doing") {
+
+                <h2 class="state" style="background-color:yellow;">{{ task.status }}</h2>
+              } @else if (task.status == "Not Started") {
+
+                <h2 class="state" style="background-color:red;">{{ task.status }}</h2>
+              }
+
+            }
+
+
+          </div>
+        </div>
+      </section>
+      <section class="grid50" id="miGrid" [ngClass]="{'visible': isVisible}">
+        <div id="leftColumn" class="datacontent">
+          <div class="bordertop">
+            <p class="column4">Descricion <span class="txtdesc">{{ task.description }}</span></p>
+          </div>
+          <div class="redat">
+            <div>
+              <p class="column">Creado por:<span class="avatar"> {{ task.created_by }}</span></p>
+            </div>
+            <div>
+              <p class="column">Fecha de creación:<span>{{ task.created_at }}</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="asignuser" *ngIf="isVisible">
+          <div class="column2" id="ale">
+            <div class="asicont" id="caja">
+              <h3>Asignar Usuario</h3>
+
+              <form class="asicont" [formGroup]="addass" (ngSubmit)="postAssign()">
+                <select class="selel" formControlName="user_id" required>
+                  <option [value]="null">Seleccionar Usuario</option>
+                  @for (user of users; track $index) {
+                    <option [value]="user.id">{{ user.name }}</option>
+                  }
+                </select>
+                <button class="asisub" type="submit">Asignar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="columna">
+        <div class="grid50">
+          <div class="columna">
+            @if (loged.is_admin || asigned) {
+              <div class="masen">
+                <h2>Botón para asignar usuarios</h2>
+                <a class="masenn" (click)="toggleVisibility()">+</a>
+              </div>
+            }
+
+            <form [formGroup]="addcoment" class="form-com" (ngSubmit)="Postcomment()">
+              @if (loged.id) {
+                <div class="avatar"
+                     style="width: 40px; height: 40px; border-radius: 50%; background-color: red; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                  <span>{{ loged.name }}</span></div>
+                <div class="textarea-container" style="position: relative; width: 100%;">
+
+                    <textarea rows="1" name="comment" style="width: 100%; padding-right: 50px; resize: none;"
+                              formControlName="contenido"></textarea>
+                  <button (click)="idasign3(loged.id)" type="submit"
+                          style="position: absolute; right: -52px; top: 54%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"/>
+                    </svg>
+                  </button>
+                </div>
+
+              }
+
+
+            </form>
+          </div>
+          <div class="asicontasd" *ngIf="isVisible">
+            @if (asign.length > 0) {
+              <div class="bbt"><h3>Usuarios asignados</h3></div>
+              <div class="scrolll">
+                <div class="user-assigned-item">
+                  @for (asigned of asign; track $index) {
+                    <div class="over2">
+                      <h2>{{ asigned.name }}</h2>
+                      <div class="desub" (click)="idasign2(asigned.id)">X</div>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+
+          </div>
+        </div>
+
+      </section>
+
+      <h3 class="tit-coment">Comentarios</h3>
+
+      @for (comment of comments; track $index) {
+        @if (comment.task_id == id) {
+          <div class="over">
+            <div class="comment-item">
+              <div class="verticalassign">
+                <div class="avatar" style="background-color: red; ">{{ comment.initial }}</div>
+                <div class="comment-meta"><span
+                  class="comentusname">{{ comment.name }}</span><span> {{ comment.created_at }}</span></div>
+              </div>
+              <div class="comment-content"><span class="desbordar">{{ comment.contenido }}</span></div>
+            </div>
+          </div>
+
+        }
+      }
+
+    </section>
+
+    <a class="enl boo" href="" (click)="deltok()">Cerrar Sesion</a>
+  }
+}
+

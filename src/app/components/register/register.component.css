@@ -1,0 +1,124 @@
+body{
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+.fini{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1.5rem;
+  gap: 1rem;
+  color: #000eff;
+  font-size: 1.5rem;
+  border-color: #000eff;
+  justify-content: left;
+  font-weight: 600;
+
+}
+.un{
+  border: solid 1.5px;
+  border-radius: 0.6rem;
+  border-color: rgb(159, 159, 159);
+}
+.hor{
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.793);
+  font-weight: 500;
+}
+
+.enl{
+  text-decoration: none;
+  color:rgb(0, 68, 156) ;
+  font-size: 1.4rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.3rem;
+  font-family: "Lato", sans-serif;
+  margin-top: 1.3rem;
+  font-size: 2rem;
+  border-color: rgb(0, 68, 156);
+  border: solid;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+}
+
+.bot{
+  display: flex;
+  flex-direction: row;
+  gap: 9rem;
+}
+:placeholder-shown{
+  color: red;
+  font-size: 0.5rem;
+  text-align: center;
+  font-family: "Lato", sans-serif
+}
+
+.fini label{
+  max-width: 300px;
+  text-align: center;
+}
+
+
+
+.fini input{
+
+  max-height: 1.2rem;
+  min-height: 1.2rem;
+}
+.btn {
+  background-color: rgb(0, 255, 30);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+form{
+  border-radius: 0.5rem;
+
+}
+.tit{
+  /* color: #000eff  ; */
+  font-size: 1.5rem;
+  background-color:rgb(245, 245, 245);
+  text-align: center;
+  border-radius: 0.6rem;
+  margin-top: 0rem;
+  border-bottom: solid 1.7px;
+  border-color: rgb(159, 159, 159);
+  font-family: "Lato", sans-serif;
+  padding: 1rem;
+  color: rgb(0, 68, 156);
+}
+input{
+  background-color: rgb(245, 245, 245);
+  border-radius:0.2rem ;
+  border: solid 1.5px;
+  border-color: rgb(189, 189, 189);
+}
+legend{
+  font-size: 1.6rem;
+  color:rgb(0, 68, 156) ;
+  font-weight: 600;
+  padding: 0.6rem;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
