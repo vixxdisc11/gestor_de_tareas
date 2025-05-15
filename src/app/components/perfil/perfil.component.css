@@ -455,6 +455,7 @@ body{
 }
 .comment-meta-ad-s{
   text-align: center;
+  margin-left: 4rem;
 }
 .gr5-tit{
   display: grid;
@@ -517,6 +518,7 @@ body{
 .norap{
   white-space: nowrap;
 text-align: center;
+  font-weight: ;
 }
 
 .comment-meta2{
